@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muniyasamy Laundry</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f5f7fa;
+  color:#333;
+}
+
+/* Navbar */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px;
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  position:sticky;
+  top:0;
+}
+
+nav h2{
+  color:#2a7fff;
+}
+
+nav a{
+  margin-left:15px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+
+/* Hero */
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#2a7fff,#00c6ff);
+  color:white;
+}
+
+.hero h1{
+  font-size:40px;
+  animation:fadeIn 2s;
+}
+
+.hero p{
+  margin:10px 0;
+}
+
+.btn{
+  padding:12px 25px;
+  background:white;
+  color:#2a7fff;
+  border-radius:25px;
+  text-decoration:none;
+  margin-top:10px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#eee;
+}
+
+/* Services */
+.services{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.service-box{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  width:250px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* Contact */
+.contact{
+  background:#2a7fff;
+  color:white;
+  padding:40px;
+  text-align:center;
+}
+
+/* Animation */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{
+    font-size:28px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <h2>Muniyasamy Laundry</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Premium Laundry Service in Madurai</h1>
+  <p>Fast Pickup | Affordable Price | Best Quality</p>
+  <a href="https://wa.me/91XXXXXXXXXX" class="btn">Order on WhatsApp</a>
+</section>
+
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <br>
+  <div class="service-box">
+
+    <div class="card">
+      <h3>Wash & Fold</h3>
+      <p>Clean and neatly folded clothes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Dry Cleaning</h3>
+      <p>Premium cleaning for delicate clothes.</p>
+    </div>
+
+    <div class="card">
+      <h3>Ironing</h3>
+      <p>Perfect press and finishing.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>📍 Madurai</p>
+  <p>📞 +91 XXXXXXXX</p>
+</section>
+
+</body>
+</html>
