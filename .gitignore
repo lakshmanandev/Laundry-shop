@@ -1,0 +1,11 @@
+# Local Netlify folder
+.netlify
+
+# Wrangler
+.wrangler
+
+# Implementation plans
+implementation_plans/
+
+# Preview screenshots
+preview.png
