@@ -3,93 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muniyasamy Laundry</title>
+<title>Muniyasamy Laundry | Madurai</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- AOS Animation -->
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins';}
-
-body{background:#f5f7fa;overflow-x:hidden;}
-
-/* LOADER */
-#loader{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-.loader-circle{
-  width:60px;height:60px;
-  border:6px solid #eee;
-  border-top:6px solid #0077ff;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-}
-@keyframes spin{100%{transform:rotate(360deg);}}
+body{background:#f8fafc;color:#333}
 
 /* NAV */
-nav{display:flex;justify-content:space-between;padding:15px 30px;background:#fff;position:sticky;top:0;}
-nav h2{color:#0077ff;}
+nav{
+display:flex;justify-content:space-between;
+padding:20px 40px;background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:sticky;top:0;z-index:1000;
+}
+nav h2{color:#0a66c2}
 
 /* HERO */
 .hero{
-  height:90vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(135deg,#0077ff,#00c6ff);
-  color:white;text-align:center;
+height:90vh;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+text-align:center;
+background:url('https://images.unsplash.com/photo-1581579186913-45acde6c7d64') center/cover;
+color:white;
+}
+.hero h1{font-size:42px;}
+.hero p{margin:10px 0;}
+.btn{
+background:#0a66c2;color:white;
+padding:12px 30px;border-radius:30px;
+text-decoration:none;
 }
 
-/* SECTIONS */
-section{padding:70px 20px;text-align:center;}
+/* SECTION */
+section{padding:80px 20px;text-align:center;}
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
 
-.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
 .card{
-  width:250px;
-  padding:20px;
-  background:white;
-  border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+width:260px;padding:25px;
+background:white;border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+.card:hover{transform:translateY(-10px);}
+
+/* ICON */
+.icon{
+font-size:30px;
+color:#0a66c2;
+margin-bottom:10px;
 }
 
 /* GALLERY */
 .gallery img{
-  width:300px;
-  border-radius:15px;
-  transition:0.3s;
+width:280px;border-radius:12px;
 }
-.gallery img:hover{transform:scale(1.05);}
 
 /* PRICING */
-.price-card{
-  padding:20px;
-  border-radius:15px;
-  background:#0077ff;
-  color:white;
-  width:250px;
+.price{
+background:#0a66c2;color:white;
+padding:25px;border-radius:15px;width:260px;
 }
 
-/* FORM */
-form input,form textarea{
-  width:90%;
-  padding:10px;
-  margin:10px;
+/* TESTIMONIAL */
+.testimonial{
+max-width:600px;margin:auto;
+background:white;padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
-button{
-  padding:10px 20px;
-  background:#0077ff;
-  color:white;
-  border:none;
+
+/* FOOTER */
+footer{
+background:#0a66c2;color:white;
+padding:30px;text-align:center;
 }
 
 /* WHATSAPP */
@@ -103,16 +98,41 @@ padding:15px;border-radius:50%;
 
 <body>
 
-<!-- LOADER -->
-<div id="loader"><div class="loader-circle"></div></div>
-
 <nav>
 <h2>Muniyasamy Laundry</h2>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-<h1 data-aos="fade-up">Premium Laundry Service</h1>
-<p data-aos="fade-up">Fast Delivery | Best Quality</p>
+<h1 data-aos="fade-up">Clean Clothes. Fast Delivery.</h1>
+<p data-aos="fade-up">Professional Laundry Service in Madurai</p>
+<a href="https://wa.me/919843911292" class="btn">Book Pickup</a>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+<h2 data-aos="fade-up">How It Works</h2>
+<div class="cards">
+
+<div class="card" data-aos="fade-up">
+<div class="icon"><i class="fa-solid fa-truck"></i></div>
+<h3>Pickup</h3>
+<p>We collect your clothes from your doorstep</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<div class="icon"><i class="fa-solid fa-water"></i></div>
+<h3>Cleaning</h3>
+<p>Professional washing and care</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<div class="icon"><i class="fa-solid fa-shirt"></i></div>
+<h3>Delivery</h3>
+<p>Fresh clothes delivered on time</p>
+</div>
+
+</div>
 </section>
 
 <!-- SERVICES -->
@@ -120,17 +140,14 @@ padding:15px;border-radius:50%;
 <h2 data-aos="fade-up">Services</h2>
 <div class="cards">
 
-<div class="card" data-aos="zoom-in">
-<h3>Wash & Fold</h3>
-</div>
+<div class="card"><div class="icon"><i class="fa-solid fa-soap"></i></div>
+<h3>Wash & Fold</h3></div>
 
-<div class="card" data-aos="zoom-in">
-<h3>Dry Cleaning</h3>
-</div>
+<div class="card"><div class="icon"><i class="fa-solid fa-shirt"></i></div>
+<h3>Dry Cleaning</h3></div>
 
-<div class="card" data-aos="zoom-in">
-<h3>Ironing</h3>
-</div>
+<div class="card"><div class="icon"><i class="fa-solid fa-fire"></i></div>
+<h3>Steam Iron</h3></div>
 
 </div>
 </section>
@@ -138,75 +155,50 @@ padding:15px;border-radius:50%;
 <!-- GALLERY -->
 <section class="gallery">
 <h2 data-aos="fade-up">Our Work</h2>
-
-<img src="https://images.unsplash.com/photo-1581579186913-45acde6c7d64" data-aos="fade-up">
-<img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a0" data-aos="fade-up">
-<img src="https://images.unsplash.com/photo-1616628182506-60a7ed2dbe64" data-aos="fade-up">
-
+<img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a0">
+<img src="https://images.unsplash.com/photo-1616628182506-60a7ed2dbe64">
+<img src="https://images.unsplash.com/photo-1581579186913-45acde6c7d64">
 </section>
 
 <!-- PRICING -->
 <section>
-<h2 data-aos="fade-up">Pricing & Offers</h2>
-
+<h2 data-aos="fade-up">Pricing</h2>
 <div class="cards">
 
-<div class="price-card" data-aos="flip-left">
-<h3>Basic</h3>
+<div class="price">
+<h3>Wash & Fold</h3>
 <p>₹99 / kg</p>
-<p>✔ Wash & Fold</p>
 </div>
 
-<div class="price-card" data-aos="flip-left">
-<h3>Premium</h3>
+<div class="price">
+<h3>Dry Cleaning</h3>
 <p>₹149 / kg</p>
-<p>✔ Dry Cleaning</p>
 </div>
 
-<div class="price-card" data-aos="flip-left">
-<h3>Offer</h3>
-<p>🎉 20% OFF First Order</p>
+<div class="price">
+<h3>Special Offer</h3>
+<p>20% OFF First Order</p>
 </div>
 
 </div>
 </section>
 
-<!-- BOOKING FORM -->
+<!-- TESTIMONIAL -->
 <section>
-<h2 data-aos="fade-up">Book Now</h2>
-
-<form onsubmit="sendWhatsApp(event)">
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="text" id="phone" placeholder="Phone Number" required>
-<textarea id="address" placeholder="Address"></textarea>
-<button type="submit">Book via WhatsApp</button>
-</form>
-
+<h2 data-aos="fade-up">Customer Reviews</h2>
+<div class="testimonial">
+<p>"Very fast service and good quality. Highly recommended!"</p>
+</div>
 </section>
+
+<footer>
+<p>📍 Madurai | 📞 9843911292</p>
+</footer>
 
 <a href="https://wa.me/919843911292" class="whatsapp">💬</a>
 
-<!-- JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init();
-
-/* LOADER */
-window.onload=function(){
- document.getElementById("loader").style.display="none";
-}
-
-/* WHATSAPP FORM */
-function sendWhatsApp(e){
- e.preventDefault();
- let name=document.getElementById("name").value;
- let phone=document.getElementById("phone").value;
- let address=document.getElementById("address").value;
-
- let msg=`Name: ${name}%0APhone: ${phone}%0AAddress: ${address}`;
- window.open(`https://wa.me/919843911292?text=${msg}`);
-}
-</script>
+<script>AOS.init();</script>
 
 </body>
 </html>
