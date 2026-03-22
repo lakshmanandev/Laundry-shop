@@ -5,173 +5,208 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Muniyasamy Laundry</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins';}
 
-body{
-  background:#f5f7fa;
-  color:#333;
-}
+body{background:#f5f7fa;overflow-x:hidden;}
 
-/* Navbar */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px;
+/* LOADER */
+#loader{
+  position:fixed;
+  width:100%;
+  height:100%;
   background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  position:sticky;
-  top:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
 }
-
-nav h2{
-  color:#2a7fff;
+.loader-circle{
+  width:60px;height:60px;
+  border:6px solid #eee;
+  border-top:6px solid #0077ff;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
 }
+@keyframes spin{100%{transform:rotate(360deg);}}
 
-nav a{
-  margin-left:15px;
-  text-decoration:none;
-  color:#333;
-  font-weight:500;
-}
+/* NAV */
+nav{display:flex;justify-content:space-between;padding:15px 30px;background:#fff;position:sticky;top:0;}
+nav h2{color:#0077ff;}
 
-/* Hero */
+/* HERO */
 .hero{
   height:90vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center;
-  background:linear-gradient(135deg,#2a7fff,#00c6ff);
-  color:white;
+  background:linear-gradient(135deg,#0077ff,#00c6ff);
+  color:white;text-align:center;
 }
 
-.hero h1{
-  font-size:40px;
-  animation:fadeIn 2s;
-}
+/* SECTIONS */
+section{padding:70px 20px;text-align:center;}
 
-.hero p{
-  margin:10px 0;
-}
-
-.btn{
-  padding:12px 25px;
-  background:white;
-  color:#2a7fff;
-  border-radius:25px;
-  text-decoration:none;
-  margin-top:10px;
-  transition:0.3s;
-}
-
-.btn:hover{
-  background:#eee;
-}
-
-/* Services */
-.services{
-  padding:50px 20px;
-  text-align:center;
-}
-
-.service-box{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
-
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
 .card{
-  background:white;
-  padding:20px;
   width:250px;
+  padding:20px;
+  background:white;
   border-radius:15px;
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* GALLERY */
+.gallery img{
+  width:300px;
+  border-radius:15px;
   transition:0.3s;
 }
+.gallery img:hover{transform:scale(1.05);}
 
-.card:hover{
-  transform:translateY(-10px);
-}
-
-/* Contact */
-.contact{
-  background:#2a7fff;
+/* PRICING */
+.price-card{
+  padding:20px;
+  border-radius:15px;
+  background:#0077ff;
   color:white;
-  padding:40px;
-  text-align:center;
+  width:250px;
 }
 
-/* Animation */
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
+/* FORM */
+form input,form textarea{
+  width:90%;
+  padding:10px;
+  margin:10px;
+}
+button{
+  padding:10px 20px;
+  background:#0077ff;
+  color:white;
+  border:none;
 }
 
-/* Responsive */
-@media(max-width:768px){
-  .hero h1{
-    font-size:28px;
-  }
+/* WHATSAPP */
+.whatsapp{
+position:fixed;bottom:20px;right:20px;
+background:#25D366;color:white;
+padding:15px;border-radius:50%;
 }
 </style>
-
 </head>
 
 <body>
 
+<!-- LOADER -->
+<div id="loader"><div class="loader-circle"></div></div>
+
 <nav>
-  <h2>Muniyasamy Laundry</h2>
-  <div>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </div>
+<h2>Muniyasamy Laundry</h2>
 </nav>
 
 <section class="hero">
-  <h1>Premium Laundry Service in Madurai</h1>
-  <p>Fast Pickup | Affordable Price | Best Quality</p>
-  <a href="https://wa.me/91XXXXXXXXXX" class="btn">Order on WhatsApp</a>
+<h1 data-aos="fade-up">Premium Laundry Service</h1>
+<p data-aos="fade-up">Fast Delivery | Best Quality</p>
 </section>
 
-<section class="services" id="services">
-  <h2>Our Services</h2>
-  <br>
-  <div class="service-box">
+<!-- SERVICES -->
+<section>
+<h2 data-aos="fade-up">Services</h2>
+<div class="cards">
 
-    <div class="card">
-      <h3>Wash & Fold</h3>
-      <p>Clean and neatly folded clothes.</p>
-    </div>
+<div class="card" data-aos="zoom-in">
+<h3>Wash & Fold</h3>
+</div>
 
-    <div class="card">
-      <h3>Dry Cleaning</h3>
-      <p>Premium cleaning for delicate clothes.</p>
-    </div>
+<div class="card" data-aos="zoom-in">
+<h3>Dry Cleaning</h3>
+</div>
 
-    <div class="card">
-      <h3>Ironing</h3>
-      <p>Perfect press and finishing.</p>
-    </div>
+<div class="card" data-aos="zoom-in">
+<h3>Ironing</h3>
+</div>
 
-  </div>
+</div>
 </section>
 
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>📍 Madurai</p>
-  <p>📞 +91 XXXXXXXX</p>
+<!-- GALLERY -->
+<section class="gallery">
+<h2 data-aos="fade-up">Our Work</h2>
+
+<img src="https://images.unsplash.com/photo-1581579186913-45acde6c7d64" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a0" data-aos="fade-up">
+<img src="https://images.unsplash.com/photo-1616628182506-60a7ed2dbe64" data-aos="fade-up">
+
 </section>
+
+<!-- PRICING -->
+<section>
+<h2 data-aos="fade-up">Pricing & Offers</h2>
+
+<div class="cards">
+
+<div class="price-card" data-aos="flip-left">
+<h3>Basic</h3>
+<p>₹99 / kg</p>
+<p>✔ Wash & Fold</p>
+</div>
+
+<div class="price-card" data-aos="flip-left">
+<h3>Premium</h3>
+<p>₹149 / kg</p>
+<p>✔ Dry Cleaning</p>
+</div>
+
+<div class="price-card" data-aos="flip-left">
+<h3>Offer</h3>
+<p>🎉 20% OFF First Order</p>
+</div>
+
+</div>
+</section>
+
+<!-- BOOKING FORM -->
+<section>
+<h2 data-aos="fade-up">Book Now</h2>
+
+<form onsubmit="sendWhatsApp(event)">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="text" id="phone" placeholder="Phone Number" required>
+<textarea id="address" placeholder="Address"></textarea>
+<button type="submit">Book via WhatsApp</button>
+</form>
+
+</section>
+
+<a href="https://wa.me/919843911292" class="whatsapp">💬</a>
+
+<!-- JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+
+/* LOADER */
+window.onload=function(){
+ document.getElementById("loader").style.display="none";
+}
+
+/* WHATSAPP FORM */
+function sendWhatsApp(e){
+ e.preventDefault();
+ let name=document.getElementById("name").value;
+ let phone=document.getElementById("phone").value;
+ let address=document.getElementById("address").value;
+
+ let msg=`Name: ${name}%0APhone: ${phone}%0AAddress: ${address}`;
+ window.open(`https://wa.me/919843911292?text=${msg}`);
+}
+</script>
 
 </body>
 </html>
