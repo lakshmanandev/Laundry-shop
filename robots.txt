@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://laundryday.au/sitemap.xml
+Disallow: /portal/
+Disallow: /api/

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 460" role="img" aria-labelledby="title desc">
+  <title id="title">Muniyasamy Laundry Services</title>
+  <desc id="desc">Washing machine, bubbles, leaf and fresh laundry in blue, navy and green.</desc>
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#08a7e8"/><stop offset="1" stop-color="#0872bd"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#12c5ee"/><stop offset="1" stop-color="#087fc9"/></linearGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#05b7e9"/><stop offset="1" stop-color="#0874bf"/></linearGradient>
+  </defs>
+  <g transform="translate(12 8) scale(.96)" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M35 208C35 105 119 23 222 23c51 0 98 20 132 53" fill="none" stroke="url(#blue)" stroke-width="21"/>
+    <rect x="78" y="92" width="208" height="258" rx="21" fill="#fff" stroke="#0c3978" stroke-width="13"/>
+    <path d="M82 151h200" stroke="#0c3978" stroke-width="10"/>
+    <path d="M105 122h42" stroke="#0c3978" stroke-width="10"/>
+    <circle cx="250" cy="122" r="14" fill="#fff" stroke="#0c3978" stroke-width="9"/>
+    <circle cx="181" cy="246" r="79" fill="#fff" stroke="#0c3978" stroke-width="13"/>
+    <circle cx="181" cy="246" r="59" fill="url(#water)"/>
+    <path d="M130 251c22-21 38-17 54-6 17 12 30 8 50-14 8-9 15-14 23-15" fill="none" stroke="#fff" stroke-width="9"/>
+    <path d="M151 204c9-18 20-27 32-32" fill="none" stroke="#fff" stroke-width="8"/>
+    <path d="M36 276c32 13 54 26 75 53-36-7-65-24-82-48" fill="#4aa934"/>
+    <path d="M43 278c24 8 47 26 66 49" fill="none" stroke="#fff" stroke-width="5"/>
+    <path d="M92 333c57 17 106 5 148-22 37-24 68-39 112-31 22 4 38 15 49 31-39-18-70-8-113 18-57 35-116 42-179 29" fill="url(#ribbon)"/>
+    <path d="M123 362c77 14 143-8 208-46" fill="none" stroke="#0c3978" stroke-width="7"/>
+    <circle cx="332" cy="76" r="20" fill="url(#blue)"/><path d="M325 68c5 0 9 3 12 7" fill="none" stroke="#fff" stroke-width="4"/>
+    <circle cx="372" cy="111" r="13" fill="url(#blue)"/><path d="M368 106l4 4" fill="none" stroke="#fff" stroke-width="3"/>
+    <circle cx="324" cy="128" r="9" fill="url(#blue)"/>
+    <path d="M310 196c10-16 34-14 42 2l-8 29-14-8-14 10-9-27" fill="#12aee5" stroke="#0c3978" stroke-width="7"/>
+    <path d="M318 198c0-21 24-34 34-17" fill="none" stroke="#0c3978" stroke-width="6"/>
+    <path d="M353 237l6 13 13 5-13 5-6 13-5-13-13-5 13-5z" fill="#0c3978"/>
+  </g>
+  <g font-family="Poppins, Arial, sans-serif" text-anchor="middle">
+    <text x="980" y="198" font-size="116" font-weight="800" letter-spacing="-5" fill="#0c3978">MUNIYASAMY</text>
+    <path d="M490 260h122M1348 260h54" stroke="#079de0" stroke-width="7" stroke-linecap="round"/>
+    <text x="985" y="282" font-size="54" font-weight="700" letter-spacing="8" fill="#079de0">LAUNDRY SERVICES</text>
+    <text x="985" y="354" font-size="28" font-weight="500" letter-spacing="10" fill="#0c3978">CLEAN CLOTHES  •  FRESH LIFE</text>
+  </g>
+</svg>
