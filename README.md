@@ -68,7 +68,7 @@ The automated tests cover domain pricing/status rules and real HTTP API behavior
 
 This repository includes a Vercel adapter for the existing Express API and a build step that publishes the public HTML site and React portal together. In Vercel, import the repository and use the repository root (`.`) as the **Root Directory**; do not set it to `client`.
 
-`vercel.json` sets the framework preset to Other, runs `npm run vercel-build`, and publishes `vercel-output/`. The build first creates the portal in `client/dist`, then copies only the public pages, required CSS/JS/images, and portal build into the Vercel static output. `/api/*` is handled by the Express Vercel Function, while `/portal/*` routes to the React portal entry. The function connects to MongoDB lazily and reuses its connection while the instance stays warm.
+`vercel.json` sets the framework preset to Other, runs `npm run vercel-build`, and publishes `vercel-output/`. The build first creates the portal in `client/dist`, then copies only the public pages, required CSS/JS/images, and portal build into the Vercel static output. `/api/*` is handled by the Express Vercel Function, while `/portal/*` routes to the React portal entry. The function connects to MongoDB lazily, reuses its connection while the instance stays warm, and caps each instance's MongoDB pool at five connections to limit serverless connection growth.
 
 Before deploying, add these values in Vercel Project Settings → Environment Variables for **Production** (and separately for Preview if you need interactive previews):
 

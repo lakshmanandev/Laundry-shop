@@ -574,7 +574,9 @@ app.use((err, req, res, next) => {
 });
 
 export async function connectDatabase(uri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/muniyasamy_laundry') {
-  await mongoose.connect(uri);
+  // Keep serverless and M0/M2 Atlas connection counts bounded. The connection
+  // itself is reused by the Vercel handler across warm invocations.
+  await mongoose.connect(uri, { maxPoolSize: 5, minPoolSize: 0, maxIdleTimeMS: 30000 });
   await Promise.all([User.init(), Service.init(), Order.init(), Message.init(), Notification.init(), AuditLog.init(), BusinessSettings.init(), PickupReservation.init()]);
   await ensureDefaults();
   await removeOrphanedPickupReservations();
