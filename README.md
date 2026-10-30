@@ -64,6 +64,28 @@ The automated tests cover domain pricing/status rules and real HTTP API behavior
 
 ## Deployment and remaining work
 
+### Deploy this full-stack project to Vercel
+
+This repository includes a Vercel adapter for the existing Express API and a build step that publishes the public HTML site and React portal together. In Vercel, import the repository and use the repository root (`.`) as the **Root Directory**; do not set it to `client`.
+
+`vercel.json` sets the framework preset to Other, runs `npm run vercel-build`, and publishes `vercel-output/`. The build first creates the portal in `client/dist`, then copies only the public pages, required CSS/JS/images, and portal build into the Vercel static output. `/api/*` is handled by the Express Vercel Function, while `/portal/*` routes to the React portal entry. The function connects to MongoDB lazily and reuses its connection while the instance stays warm.
+
+Before deploying, add these values in Vercel Project Settings → Environment Variables for **Production** (and separately for Preview if you need interactive previews):
+
+| Variable | Value |
+| --- | --- |
+| `NODE_ENV` | `production` |
+| `MONGODB_URI` | MongoDB Atlas connection URI reachable from Vercel Functions. Do not use localhost. |
+| `JWT_SECRET` | A unique random secret of at least 32 characters. |
+| `CLIENT_ORIGIN` | The exact HTTPS origin assigned to the Vercel project, such as `https://your-project.vercel.app`, with no path or trailing slash. |
+| `TRUST_PROXY_HOPS` | `1` for the Vercel Function request path. |
+
+Do not set `PORT` in Vercel; the platform invokes the function. Do not upload or commit `.env`. Use Vercel's Settings → Build and Development settings with Root Directory `.`; the build command and output directory are already set in `vercel.json`. After the first project URL is assigned, set `CLIENT_ORIGIN` to that exact URL and redeploy. Preview URLs have a different origin; set their exact `CLIENT_ORIGIN` in the Preview environment if you need login and API writes to work there. Add the project URL to MongoDB Atlas Network Access using a connection policy appropriate for your Atlas and Vercel plans.
+
+Create the first admin separately in a trusted interactive terminal: set `MONGODB_URI` to the production database for that command and run `npm run admin:create`. It prompts for the account details and hides the password; do not put the admin password in Vercel environment variables. After deployment, smoke-check `/`, `/privacy.html`, `/portal/`, `/portal/admin`, `/api/health`, and an unknown `/api/*` route. Confirm health reports `database: connected`, then test registration/login, booking, and admin order access. Vercel CLI is optional; the Git-connected deployment runs the configured build automatically. To reproduce the static output locally, run `npm run vercel-build`; inspect `vercel-output/` and do not commit that generated directory.
+
+Vercel serves this Express API as a Function rather than a persistent Node server. Database access, exact-origin configuration, and function limits should be verified on the deployed project before accepting live orders. The existing Render instructions below remain available for the original single long-running Express service setup.
+
 Deploy one Node/Express web service with a persistent MongoDB database. For Render, create a Web Service from this repository with build command `npm ci && npm run build:client` and start command `npm start`. Set these environment values in the host dashboard (never commit production secrets):
 
 | Variable | Value |

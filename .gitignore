@@ -16,4 +16,5 @@ node_modules/
 npm-debug.log*
 /client/dist/
 /client/node_modules/
+/vercel-output/
 .vite/

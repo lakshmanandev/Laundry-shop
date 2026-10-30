@@ -10,6 +10,7 @@
     "dev:client": "vite --config client/vite.config.js",
     "dev:all": "concurrently -k \"npm:dev:server\" \"npm:dev\"",
     "build:client": "vite build --config client/vite.config.js",
+    "vercel-build": "vite build --config client/vite.config.js && node scripts/prepare-vercel-output.js",
     "preview:client": "vite preview --config client/vite.config.js",
     "admin:create": "node server/src/create-admin.js",
     "test": "node --test"

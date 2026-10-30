@@ -1,0 +1,33 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "vercel-output",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "{index.html,privacy.html,brunswick-east.html,maribyrnong.html,st-albans.html}"
+    }
+  },
+  "redirects": [
+    { "source": "/portal.html", "destination": "/portal/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/api", "destination": "/api/index?__path=/api" },
+    { "source": "/api/:path*", "destination": "/api/index?__path=/api/:path*" },
+    { "source": "/portal", "destination": "/portal/index.html" },
+    { "source": "/portal/:path*", "destination": "/portal/index.html" },
+    { "source": "/privacy", "destination": "/privacy.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(self)" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" }
+      ]
+    }
+  ]
+}
